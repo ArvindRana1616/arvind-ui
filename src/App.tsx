@@ -1,53 +1,29 @@
-import React from "react";
-import { CssBaseline, Container, Typography } from "@mui/material";
+
+import { Container, Grid } from "@mui/material";
+import HeroSection from "./components/HeroSection";
 import ProfileCard from "./components/ProfileCard";
 import PricingCard from "./components/PricingCard";
-import ProfileShowcaseCard from "./components/ProfileShowcaseCard";
-import PlanSelectionCard from "./components/PlanSelectionCard";
-import FeatureHighlightCard from "./components/FeatureHighlightCard";
+import FeatureCard from "./components/FeatureCard";
+import Footer from "./components/Footer";
 
-const plans = [
-  {
-    plan: "Pro",
-    price: "₹999/month",
-    features: ["10 Users", "Priority Support", "Unlimited Projects"],
-    highlight: true,
-    ribbon: "Most Popular",
-  },
-  {
-    plan: "Basic",
-    price: "₹499/month",
-    features: ["2 Users", "Email Support"],
-    disabled: true,
-    ribbon: "Coming Soon",
-  },
-  {
-    plan: "Enterprise",
-    price: "₹1999/month",
-    features: ["Unlimited Users", "24x7 Support", "Dedicated Manager"],
-  },
-];
-
-function App() {
+const HomePage = () => {
   return (
-    <>
-      <CssBaseline />
-      <Container sx={{ mt: 4 }}>
-        <Typography variant="h4" gutterBottom textAlign="center">
-          Arvind UI Components
-        </Typography>
-        <ProfileCard />
-        <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", marginTop: 32 }}>
-          {plans.map((p, i) => (
-            <PricingCard key={i} {...p} />
-          ))}
-        </div>
-         <ProfileShowcaseCard />
-      <PlanSelectionCard />
-      <FeatureHighlightCard />
-      </Container>
-    </>
+    <Container maxWidth="lg">
+      <HeroSection />
+      <Grid container spacing={4} mt={2}>
+        <Grid item xs={12} md={4}>
+          <ProfileCard />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <PricingCard />
+        </Grid>
+        <Grid item xs={12} md={4}>
+          <FeatureCard />
+        </Grid>
+      </Grid>
+      <Footer />
+    </Container>
   );
-}
+};
 
-export default App;
+export default HomePage;

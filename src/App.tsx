@@ -2,6 +2,9 @@ import React from "react";
 import { CssBaseline, Container, Typography } from "@mui/material";
 import ProfileCard from "./components/ProfileCard";
 import PricingCard from "./components/PricingCard";
+import ProfileShowcaseCard from "./components/ProfileShowcaseCard";
+import PlanSelectionCard from "./components/PlanSelectionCard";
+import FeatureHighlightCard from "./components/FeatureHighlightCard";
 
 const plans = [
   {
@@ -39,6 +42,9 @@ function App() {
             <PricingCard key={i} {...p} />
           ))}
         </div>
+         <ProfileShowcaseCard />
+      <PlanSelectionCard />
+      <FeatureHighlightCard />
       </Container>
     </>
   );
